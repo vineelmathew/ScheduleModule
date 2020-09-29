@@ -1,11 +1,8 @@
 package com.trainee.schedulemodule.entities;
 
 import java.util.Objects;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
-
 @Entity
 public class Airport {
 	
