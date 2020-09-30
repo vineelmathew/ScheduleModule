@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface ScheduleDao extends JpaRepository<Schedule,Integer>{
-    List<Schedule> betweenAirports(Airport source,Airport destination);
+    //List<Schedule> betweenAirports(Airport source,Airport destination);
 }

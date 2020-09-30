@@ -3,12 +3,18 @@ package com.trainee.schedulemodule.entities;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 public class Schedule {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    @OneToOne(cascade ={CascadeType.ALL})
     private Airport sourceAirport;
+    @OneToOne(cascade = {CascadeType.ALL})
     private Airport destinationAirport;
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
@@ -16,6 +22,21 @@ public class Schedule {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
     private Date departureTime;
+
+
+
+    public Schedule()
+    {
+
+
+    }
+
+    public Schedule(Airport sourceAirport, Airport destinationAirport, Date arrivalTime, Date departureTime) {
+        this.sourceAirport = sourceAirport;
+        this.destinationAirport = destinationAirport;
+        this.arrivalTime = arrivalTime;
+        this.departureTime = departureTime;
+    }
 
     public Airport getSourceAirport() {
         return sourceAirport;
@@ -47,5 +68,13 @@ public class Schedule {
 
     public void setDepartureTime(Date departureTime) {
         this.departureTime = departureTime;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

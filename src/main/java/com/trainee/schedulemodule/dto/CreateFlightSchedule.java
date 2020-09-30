@@ -1,24 +1,12 @@
-package com.trainee.schedulemodule.entities;
+package com.trainee.schedulemodule.dto;
 
-import javax.persistence.*;
+import com.trainee.schedulemodule.entities.Flight;
+import com.trainee.schedulemodule.entities.Schedule;
 
-@Entity
-public class FlightSchedule {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
-    @OneToOne(cascade = CascadeType.ALL)
+public class CreateFlightSchedule {
     private Flight flight;
     private Integer availableSeats;
-    @OneToOne(cascade = CascadeType.ALL)
     private Schedule schedule;
-
-    public FlightSchedule(Flight flight, Integer availableSeats, Schedule schedule) {
-        this.flight = flight;
-        this.availableSeats = availableSeats;
-        this.schedule = schedule;
-    }
 
     public Flight getFlight() {
         return flight;
@@ -44,11 +32,4 @@ public class FlightSchedule {
         this.schedule = schedule;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

@@ -1,23 +1,21 @@
-package com.trainee.schedulemodule.entities;
-
-import javax.persistence.*;
-
-@Entity
-public class FlightSchedule {
-
-    @Id
-    @GeneratedValue
+package com.trainee.schedulemodule.dto;
+import com.trainee.schedulemodule.entities.Flight;
+import com.trainee.schedulemodule.entities.Schedule;
+public class FlightScheduleDto {
     private Integer id;
-    @OneToOne(cascade = CascadeType.ALL)
     private Flight flight;
     private Integer availableSeats;
-    @OneToOne(cascade = CascadeType.ALL)
     private Schedule schedule;
 
-    public FlightSchedule(Flight flight, Integer availableSeats, Schedule schedule) {
+    public FlightScheduleDto(Integer id, Flight flight, Integer availableSeats, Schedule schedule) {
+        this.id = id;
         this.flight = flight;
         this.availableSeats = availableSeats;
         this.schedule = schedule;
+    }
+    public FlightScheduleDto()
+    {
+
     }
 
     public Flight getFlight() {
