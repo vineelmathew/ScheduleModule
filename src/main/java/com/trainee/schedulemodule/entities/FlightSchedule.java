@@ -19,6 +19,10 @@ public class FlightSchedule {
         this.availableSeats = availableSeats;
         this.schedule = schedule;
     }
+    public FlightSchedule()
+    {
+
+    }
 
     public Flight getFlight() {
         return flight;

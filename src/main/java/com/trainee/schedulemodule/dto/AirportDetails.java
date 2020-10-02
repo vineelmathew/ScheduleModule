@@ -2,11 +2,8 @@ package com.trainee.schedulemodule.dto;
 
 public class AirportDetails {
 	    private String code;
-
 	    private String name;
-
 	    private String location;
-
 
 	    public AirportDetails(){
 
@@ -43,6 +40,4 @@ public class AirportDetails {
 			this.location = location;
 		}
 
-	    
 	}
-
