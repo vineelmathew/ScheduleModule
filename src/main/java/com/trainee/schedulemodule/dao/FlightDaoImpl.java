@@ -31,7 +31,7 @@ public class FlightDaoImpl implements IFlightDao{
 
 	@Override
 	public List<Flight> viewAllFlights() {
-		 String jpaQuery = "from flight";
+		 String jpaQuery = "from Flight";
 	       TypedQuery<Flight>flightquery= entityManager.createQuery(jpaQuery, Flight.class);
 	        List<Flight> resultList = flightquery.getResultList();
 	        return resultList;

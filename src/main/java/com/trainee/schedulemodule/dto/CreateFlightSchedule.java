@@ -7,7 +7,6 @@ public class CreateFlightSchedule {
     private Flight flight;
     private Integer availableSeats;
     private Schedule schedule;
-
     public Flight getFlight() {
         return flight;
     }
